@@ -1,0 +1,23 @@
+<h1>GlowUp SaaS</h1>
+
+<p>User: {{ user.username }}</p>
+<p>Level: {{ level }}</p>
+<p>XP: {{ user.xp }}</p>
+
+<form method="POST">
+    <select name="goal">
+        <option value="skin">Skin</option>
+        <option value="style">Style</option>
+        <option value="fitness">Fitness</option>
+        <option value="confidence">Confidence</option>
+    </select>
+    <button>Generate Plan</button>
+</form>
+
+{% if plan %}
+<ul>
+    {% for task in plan %}
+        <li>{{ task }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
